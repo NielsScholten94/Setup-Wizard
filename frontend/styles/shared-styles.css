@@ -11,5 +11,14 @@
 }
 
 vaadin-checkbox {
+  border: 1px solid #eaeaea;
   font-weight: bold;
+  width: 600px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+vaadin-checkbox.active {
+  border: 1px solid black;
+  height: 250px;
 }
