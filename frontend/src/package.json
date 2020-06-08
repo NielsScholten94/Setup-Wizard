@@ -1,21 +1,21 @@
 {
   "task1": {
     "name": "Create your account",
-    "status": "completed"
+    "status": "true"
   },
 
   "task2": {
     "name": "Create blueprint",
-    "status": "open"
+    "status": "false"
   },
 
   "task3": {
     "name": "Create import mapping",
-    "status": "open"
+    "status": "false"
   },
 
   "task4": {
     "name": "Import product data",
-    "status": "open"
+    "status": "false"
   }
 }
