@@ -112,7 +112,7 @@ public class MainView extends VerticalLayout {
 
 
         // page title
-        H1 title = new H1("How to get started with Beeyond?");
+        H1 title = new H1("How to get started?");
 
 
         // define start position of task elements based on variable task status from database
@@ -122,7 +122,7 @@ public class MainView extends VerticalLayout {
             buttonsTask1.addClassName("disabled");
             progressBar.setValue(25);
             progressLabel.setText("25%");
-            title.setText("How to get started with Beeyond?");
+            title.setText("How to get started?");
         } else {
             if (task1Status.getText().equals("active")){
                 row1.setValue(false);
@@ -203,7 +203,7 @@ public class MainView extends VerticalLayout {
             buttonsTask2.removeClassName("disabled");
             progressBar.setValue(25);
             progressLabel.setText("25%");
-            title.setText("How to get started with Beeyond?");
+            title.setText("How to get started?");
 
         });
 
@@ -284,7 +284,7 @@ public class MainView extends VerticalLayout {
             progressBar.setValue(0);
             progressLabel.setText("0%");
 
-            title.setText("How to get started with Beeyond?");
+            title.setText("How to get started?");
 
         });
 

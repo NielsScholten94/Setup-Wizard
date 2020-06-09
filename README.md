@@ -1,6 +1,6 @@
 # Setup Wizard
 
-This prototype was developed by Niels Scholten in 2020. It is a prototype for the setup wizard of the digital onboarding of Beeyond. The prototype shows the functionalities of the setup wizard. It is build with the Vaadin framework, specifically Vaadin 14 and above. 
+This prototype was developed by Niels Scholten in 2020. The prototype shows the functionalities of a setup wizard. It is build with the Vaadin framework, specifically Vaadin 14 and above. 
 
 ## Infrastructure
 
