@@ -1,40 +1,16 @@
 package com.example;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.fasterxml.jackson.databind.util.JSONWrappedObject;
-import com.helger.commons.functional.IFunction;
-import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.dependency.JavaScript;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.progressbar.ProgressBar;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.Route;
-import elemental.json.*;
-import jdk.nashorn.internal.ir.CallNode;
-import org.atmosphere.interceptor.JSONPAtmosphereInterceptor;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 @Route
 @CssImport("styles/shared-styles.css")
@@ -216,7 +192,7 @@ public class MainView extends VerticalLayout {
             }
         }
 
-        // define action when task is completed
+        // define action when clicked on a button (can be removed when implemented with a database)
         task1Button1.addClickListener(click -> {
 
             row1.setValue(true);
