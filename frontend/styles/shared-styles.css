@@ -11,18 +11,41 @@
 }
 
 vaadin-checkbox {
-  border: 1px solid #eaeaea;
   font-weight: bold;
-  width: 600px;
-  padding: 20px;
-  border-radius: 5px;
 }
 
-vaadin-checkbox.active {
-  border: 1px solid black;
-  height: 250px;
+.noPadding {
+  padding: 0;
 }
 
 .disabled {
   display: none;
+}
+
+.taskrow {
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.taskrow.active {
+  border: 1px solid black;
+}
+
+.page {
+  width: 700px!important;
+  margin: 0 auto;
+}
+
+.buttonrow {
+  width: 100%;
+  padding: 0 20px 0 30px;
+}
+
+.taskbutton {
+  width: 49%;
+  height: 130px;
+  border: 1px solid #eaeaea;
+  background-color: white;
+  cursor: pointer;
 }
