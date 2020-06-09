@@ -35,23 +35,68 @@ Within a task, the button component offers options for the user.
 The "adClassName" adds a class styling to the button. This class is defined in the styling file (see infrastructure).
 
 ```java
-Button task1Button1 = new Button("Create an account");
-task1Button1.addClassName("taskbutton");
+Button task2Button1 = new Button("Use a template");
+task2Button1.addClassName("taskbutton");
+
+Button task2Button2 = new Button("Import my own");
+task2Button2.addClassName("taskbutton");
 ```
 
 ### Vaadin layout component
 The buttons are displayed within a HorizontalLayout component to place them next to each other. 
 
 ```java
-HorizontalLayout buttonsTask1 = new HorizontalLayout();
-buttonsTask1.addClassName("buttonrow");
-buttonsTask1.add(task1Button1);
+HorizontalLayout buttonsTask2 = new HorizontalLayout();
+buttonsTask2.addClassName("buttonrow");
+buttonsTask2.add(task2Button1, task2Button2);
 ```
 
-Both the checkbox and buttons are combined in a VerticalLayout component. 
+Both the checkbox and buttons are combined in a VerticalLayout component and placed underneath each other. 
 
 ```java
-VerticalLayout taskrow1 = new VerticalLayout();
-taskrow1.add(row1, buttonsTask1);
-taskrow1.addClassName("taskrow");
+VerticalLayout taskrow2 = new VerticalLayout();
+taskrow2.add(row2, buttonsTask2);
+taskrow2.addClassName("taskrow");
+```
+
+### Vaadin progressbar component
+The progressbar shows the progress of the setup wizard.
+
+```java
+ProgressBar progressBar = new ProgressBar(0, 100, 0);
+Label progressLabel = new Label("0%");
+progressLabel.addClassName("progressLabel");
+```
+
+### if else function
+The if else function checks if a task is already completed. When the task is completed, the checkbox will be checked and the buttons will be disabled. At this stage the function is reading from text fields defined at the top of the page. 
+
+```java
+Text task1Status = new Text("completed");
+Text task2Status = new Text("active");
+Text task3Status = new Text("open");
+Text task4Status = new Text("open");
+```
+
+These text fields should be replaced with a database connection. Everytime the user finished a new task, the database should get an status update. Like in this example above, completed stands for a completed task, active for an active task and open for a task that is nog completed nor active. The status of a task is checked with the function below 
+
+```java
+if (task1Status.getText().equals("completed")){
+	row1.setValue(true);
+	row1.setLabel("You finished setting up your account");
+	buttonsTask1.addClassName("disabled");
+	progressBar.setValue(25);
+	progressLabel.setText("25%");
+	title.setText("How to get started with Beeyond?");
+} else {
+	if (task1Status.getText().equals("active")){
+		row1.setValue(false);
+                row1.setLabel("Set up your account");
+                taskrow1.addClassName("active");
+	} else {
+                row1.setValue(false);
+                row1.setLabel("Set up your account");
+                buttonsTask1.addClassName("disabled");
+	}
+}
 ```
