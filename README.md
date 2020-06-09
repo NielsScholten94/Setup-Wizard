@@ -5,5 +5,8 @@ This is a prototype was developed by Niels Scholten in 2020. It is a prototype f
 ## Infrastructure
 
 The files relevant to the setup wizard are located in the following folders:
+
+```location
 "/frontend/styles/shared-styles.css"; // styling
 "/src/main/java/com.example/MainView.java"; // Main page
+```
