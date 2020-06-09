@@ -5,6 +5,10 @@
 */
 
 /* Example: CSS class name to center align the content . */
+h1 {
+  font-size: 33px;
+}
+
 .centered-content {
   margin: 0 auto;
   max-width: 250px;
@@ -48,4 +52,12 @@ vaadin-checkbox {
   border: 1px solid #eaeaea;
   background-color: white;
   cursor: pointer;
+}
+
+.progress {
+  width: 100%;
+}
+
+.progressLabel {
+  font-size: 12px;
 }

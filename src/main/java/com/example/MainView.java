@@ -18,6 +18,7 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.progressbar.ProgressBar;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.Route;
@@ -124,11 +125,28 @@ public class MainView extends VerticalLayout {
         taskrow4.addClassName("taskrow");
 
 
+        // progress bar to indicate progress of setup wizard
+        ProgressBar progressBar = new ProgressBar(0, 100, 0);
+        Label progressLabel = new Label("0%");
+        progressLabel.addClassName("progressLabel");
+
+        HorizontalLayout progress = new HorizontalLayout();
+        progress.addClassName("progress");
+        progress.add(progressLabel, progressBar);
+
+
+        // page title
+        H1 title = new H1("How to get started with Beeyond?");
+
+
         // define start position of task elements based on variable task status from database
         if (task1Status.getText().equals("completed")){
             row1.setValue(true);
             row1.setLabel("You finished setting up your account");
             buttonsTask1.addClassName("disabled");
+            progressBar.setValue(25);
+            progressLabel.setText("25%");
+            title.setText("How to get started with Beeyond?");
         } else {
             if (task1Status.getText().equals("active")){
                 row1.setValue(false);
@@ -145,6 +163,9 @@ public class MainView extends VerticalLayout {
             row2.setValue(true);
             row2.setLabel("You have created your first blueprint");
             buttonsTask2.addClassName("disabled");
+            progressBar.setValue(50);
+            progressLabel.setText("50%");
+            title.setText("Great work, your blueprint is looking good!");
         } else {
             if (task2Status.getText().equals("active")){
                 row2.setValue(false);
@@ -161,6 +182,9 @@ public class MainView extends VerticalLayout {
             row3.setValue(true);
             row3.setLabel("You have created an import mapping");
             buttonsTask3.addClassName("disabled");
+            progressBar.setValue(75);
+            progressLabel.setText("75%");
+            title.setText("Nice work! You're almost there.");
         } else {
             if (task3Status.getText().equals("active")){
                 row3.setValue(false);
@@ -177,6 +201,9 @@ public class MainView extends VerticalLayout {
             row4.setValue(true);
             row4.setLabel("You have imported your product data");
             buttonsTask4.addClassName("disabled");
+            progressBar.setValue(100);
+            progressLabel.setText("100%");
+            title.setText("Congrats! You have completed the setup.");
         } else {
             if (task4Status.getText().equals("active")){
                 row4.setValue(false);
@@ -198,6 +225,9 @@ public class MainView extends VerticalLayout {
             taskrow1.removeClassName("active");
             taskrow2.addClassName("active");
             buttonsTask2.removeClassName("disabled");
+            progressBar.setValue(25);
+            progressLabel.setText("25%");
+            title.setText("How to get started with Beeyond?");
 
         });
 
@@ -209,6 +239,9 @@ public class MainView extends VerticalLayout {
             taskrow2.removeClassName("active");
             taskrow3.addClassName("active");
             buttonsTask3.removeClassName("disabled");
+            progressBar.setValue(50);
+            progressLabel.setText("50%");
+            title.setText("Great work, your blueprint is looking good!");
 
         });
 
@@ -220,6 +253,9 @@ public class MainView extends VerticalLayout {
             taskrow3.removeClassName("active");
             taskrow4.addClassName("active");
             buttonsTask4.removeClassName("disabled");
+            progressBar.setValue(75);
+            progressLabel.setText("75%");
+            title.setText("Nice work! You're almost there.");
 
         });
 
@@ -229,15 +265,16 @@ public class MainView extends VerticalLayout {
             row4.setLabel("You have imported your product data");
             buttonsTask4.addClassName("disabled");
             taskrow4.removeClassName("active");
+            progressBar.setValue(100);
+            progressLabel.setText("100%");
+            title.setText("Congrats! You have completed the setup.");
 
         });
 
         // create page layout
         VerticalLayout todosList = new VerticalLayout();
         todosList.addClassName("noPadding");
-        todosList.add(taskrow1, taskrow2, taskrow3, taskrow4);
-
-        H1 title = new H1("How to get started with Beeyond?");
+        todosList.add(progress, taskrow1, taskrow2, taskrow3, taskrow4);
 
         VerticalLayout content = new VerticalLayout();
         content.addClassName("noPadding");
@@ -267,6 +304,11 @@ public class MainView extends VerticalLayout {
             row4.setLabel("Import your product data");
             taskrow4.removeClassName("active");
             buttonsTask4.addClassName("disabled");
+
+            progressBar.setValue(0);
+            progressLabel.setText("0%");
+
+            title.setText("How to get started with Beeyond?");
 
         });
 
