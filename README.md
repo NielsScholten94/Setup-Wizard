@@ -1,6 +1,6 @@
 # Digital Onboarding
 
-This is a prototype was developed by Niels Scholten in 2020. It is a prototype for the setup wizard of the digital onboarding of Beeyond. The prototype shows the functionalities of the setup wizard. It is build with the Vaadin framework, specifically Vaadin 14 and above. 
+This prototype was developed by Niels Scholten in 2020. It is a prototype for the setup wizard of the digital onboarding of Beeyond. The prototype shows the functionalities of the setup wizard. It is build with the Vaadin framework, specifically Vaadin 14 and above. 
 
 ## Infrastructure
 
@@ -13,7 +13,7 @@ The files relevant to the setup wizard are located in the following folders:
 ```
 
 ## Installation
-To continue make sure that at least the following tools are installed:
+For usage of the application make sure that at least the following tools are installed:
 - Java Development Kit (JDK) 8 or later, like OpenJDK 8
 - A Java IDE, like IntelliJ IDEA Community
 - Node.js
@@ -24,14 +24,14 @@ Import the project with the "pom.xml" file in a Java IDE (like IntelliJ IDEA). W
 The prototype contains a couple components and features: 
 
 ### Vaadin checkbox component
-The checkbox component shows the status of a task from the setup wizard.
+The checkbox component shows the status of a task of the setup wizard.
 
 ```java
 Checkbox row1 = new Checkbox("", false);
 ```
 
 ### Vaadin button component
-Within a task, the button component offers options for the user. 
+Within a task, the button component offers options for the user to execute a certain task. For example the task "create a blueprint" has two options: "use a template" and "import my own".  
 The "adClassName" adds a class styling to the button. This class is defined in the styling file (see infrastructure).
 
 ```java
@@ -78,7 +78,7 @@ Text task3Status = new Text("open");
 Text task4Status = new Text("open");
 ```
 
-These text fields should be replaced with a database connection. Everytime the user finished a new task, the database should get an status update. Like in this example above, completed stands for a completed task, active for an active task and open for a task that is nog completed nor active. The status of a task is checked with the function below. 
+These text fields should be replaced with a database connection. Everytime the user finished a new task, the database should get an status update. Like in this example above, completed stands for a completed task, active for an active task and open for a task that is still open. The status of a task is checked with the function below. 
 
 ```java
 if (task1Status.getText().equals("completed")){
@@ -110,7 +110,7 @@ page.add(content, resetButton);
 page.addClassName("page");
 ```
 
-This bundle is executed and displayed with the following code: 
+This bundle is executed and displayed to the user with the following code: 
 
 ```java
 add(
@@ -127,5 +127,5 @@ Use this roadmap for further development of this prototype.
 - Connect the prototype with the database
 - Create actual tasks in the database with a status indicator (completed, active or open)
 - Pull the status of these tasks from the database in the setup wizard
-- Define the styling of the tasks based on the status from the tasks in the database
+- Define the styling of the tasks in the setup wizard based on the status from the tasks in the database
 - Update the status of the tasks in the database when a certain task has been completed. 
