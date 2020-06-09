@@ -78,7 +78,7 @@ Text task3Status = new Text("open");
 Text task4Status = new Text("open");
 ```
 
-These text fields should be replaced with a database connection. Everytime the user finished a new task, the database should get an status update. Like in this example above, completed stands for a completed task, active for an active task and open for a task that is nog completed nor active. The status of a task is checked with the function below 
+These text fields should be replaced with a database connection. Everytime the user finished a new task, the database should get an status update. Like in this example above, completed stands for a completed task, active for an active task and open for a task that is nog completed nor active. The status of a task is checked with the function below. 
 
 ```java
 if (task1Status.getText().equals("completed")){
@@ -100,3 +100,30 @@ if (task1Status.getText().equals("completed")){
 	}
 }
 ```
+
+### Component execute
+Every component is bundled in a VerticalLayout component like this:
+
+```java
+VerticalLayout page = new VerticalLayout();
+page.add(content, resetButton);
+page.addClassName("page");
+```
+
+This bundle is executed and displayed with the following code: 
+
+```java
+add(
+	page
+);
+```
+
+## Roadmap
+Use this roadmap for further development of this prototype. 
+
+- Create a database for the setup wizard
+- Connect the prototype with the database
+- Create actual tasks in the database with a status indicator (completed, active or open)
+- Pull the status of these tasks from the database in the setup wizard
+- Define the styling of the tasks based on the status from the tasks in the database
+- Update the status of the tasks in the database when a certain task has been completed. 
